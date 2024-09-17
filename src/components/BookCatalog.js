@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import BookForm from './BookForm';
 import BookList from './BookList';
-import { addOrUpdateBook, editBook, deleteBook } from '../services/actions';
+import { getStoredBooks, setStoredBooks } from '../services/LocalStorage';
+import { addOrUpdateBook, editBook, deleteBook } from '../services/Actions';
 
 const BookCatalog = () => {
   const [books, setBooks] = useState([]);
@@ -9,12 +10,11 @@ const BookCatalog = () => {
   const [presentBook, setPresentBook] = useState({ title: '', author: '', year: '', description: '' });
 
   useEffect(() => {
-    const storedBooks = JSON.parse(localStorage.getItem('books'));
-    if (storedBooks) setBooks(storedBooks);
+    setBooks(getStoredBooks());
   }, []);
 
-   useEffect(() => {
-    localStorage.setItem('books', JSON.stringify(books));
+  useEffect(() => {
+    setStoredBooks(books);
   }, [books]);
 
   const handleAddOrUpdateBook = (book) => {
