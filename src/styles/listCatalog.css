@@ -1,0 +1,34 @@
+.bookList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .book {
+    border: 1px solid #929191;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .book h2 {
+    margin: 0;
+    color: #2e2e2e;
+  }
+  
+  .book p {
+    margin: 5px 0;
+  }
+  
+  .book button {
+    margin-right: 10px;
+    background-color: #007bff;
+  }
+  
+  .book button:last-child {
+    background-color: #dc3545;
+  }
+  
+  .book button:hover {
+    opacity: 0.9;
+  }
