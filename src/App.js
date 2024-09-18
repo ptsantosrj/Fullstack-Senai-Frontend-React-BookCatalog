@@ -1,15 +1,27 @@
 import React from 'react';
-import BookCatalog from './components/BookCatalog';
 import './App.css';
 import './styles/listCatalog.css'
 import './styles/topCatalog.css'
 
-function App() {
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import BookCatalog from './components/BookCatalog';
+import BookHome from './components/BookHome';
+import BookAbout from './components/BookAbout';
+import BookNav from './components/BookNav';
+
+const App = () => {
   return (
-    <div className="App">
-      <BookCatalog />
-    </div>
+    <Router>
+      <div>
+        <BookNav />
+        <Routes>
+          <Route path="/" element={<BookHome />} />
+          <Route path="/catalog" element={<BookCatalog />} />
+          <Route path="/about" element={<BookAbout />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
