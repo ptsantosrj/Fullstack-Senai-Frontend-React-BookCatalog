@@ -6,7 +6,7 @@ const BookNavbar = () => {
     <nav>
       <ul>
         <li><Link to="/">Início</Link></li>
-        <li><Link to="/catalog">Catálogo de Livros</Link></li>
+        {/*<li><Link to="/catalog">Catálogo de Livros</Link></li>*/}
         <li><Link to="/about">Sobre</Link></li>
       </ul>
     </nav>
